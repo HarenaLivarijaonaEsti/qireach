@@ -1,0 +1,152 @@
+:root {
+    --primary: #20B2AA;      /* turquoise vif */
+    --secondary: #7FDBE0;    /* turquoise clair pour dégradés */
+    --accent: #135351;       /* turquoise foncé pour contraste */
+    --light-bg: #E0F7F7;     /* fond très clair tirant vers le turquoise */
+    --dark-text: #2E2E2E;    /* texte sombre inchangé */
+    --white: #FFFFFF;         /* blanc */
+}
+
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    margin: 0;
+    background: var(--light-bg);
+    color: var(--dark-text);
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* TITRES */
+h1 { font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 36px; color: var(--accent);}
+h2 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 24px; color: var(--primary);}
+h3 { font-family: 'Poppins', sans-serif; font-weight: 500; font-size: 19px; color: var(--accent);}
+
+/* HEADER FIXE */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 10px 20px;
+    border-bottom: 3px solid var(--primary);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    flex-wrap: nowrap; /* empêche le nav de passer en ligne suivante */
+    overflow: hidden;  /* masque tout dépassement éventuel */
+    box-sizing: border-box;
+}
+#logo { max-height: 40px; border-radius: 5px; }
+
+/* NAVIGATION */
+nav ul { list-style: none; display: flex; gap: 20px; margin: 10px 0 0 0; padding: 0; flex-wrap: wrap; }
+nav a { text-decoration: none; color: var(--accent); font-family: 'Poppins', sans-serif; font-weight: 500; }
+nav a:hover { color: var(--primary); }
+
+/* MAIN SECTIONS */
+main { display: flex; flex-direction: column; gap: 50px; padding: 20px; margin-top: 80px; }
+
+/* SECTIONS AVEC DÉGRADÉ */
+section.hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 50px 20px;
+    opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out;
+}
+
+section.about {
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--light-bg) 100%);
+    color: var(--dark-text);
+    padding: 50px 20px;
+    opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out;
+}
+
+section#formations {
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--secondary) 100%);
+    color: var(--dark-text);
+    padding: 50px 20px;
+    opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out;
+}
+
+section#contact {
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+    color: var(--white);
+    padding: 50px 20px;
+    opacity: 0; transform: translateY(50px); transition: all 0.8s ease-out;
+}
+
+section { border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+
+/* HERO */
+.hero-img img { width: 100%; max-width: 600px; border-radius: 12px; }
+
+/* ABOUT */
+.about-content { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.about-img { width: 100%; max-width: 400px; border-radius: 10px; }
+
+/* FORMATIONS CARDS */
+.cards { display: flex; flex-direction: column; gap: 30px; }
+.card { padding: 20px; border: 1px solid var(--secondary); border-radius: 10px; background: var(--white); }
+
+/* BOUTONS */
+button, .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+button:hover, .btn:hover { background: var(--accent); }
+
+/* FOOTER */
+footer {
+    background: var(--accent);
+    color: var(--white);
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE TABLETTE / MOBILE */
+@media (max-width: 1024px) {
+    .hero, .about-content { flex-direction: column; text-align: center; }
+    .cards { flex-direction: column; }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; align-items: center; }
+    nav ul { justify-content: center; gap: 15px; }
+    #logo { max-height: 40px; }
+    section { padding: 30px 15px; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 20px; }
+    h3 { font-size: 17px; }
+    button, .btn { font-size: 15px; padding: 10px 20px; }
+    main{ margin-top: 100px;  /* plus d'espace pour le header */}
+}
+
+/* --------------------
+   ANIMATION AU SCROLL
+--------------------- */
+section.show {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
