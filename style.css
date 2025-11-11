@@ -126,7 +126,7 @@ footer {
 
 /* RESPONSIVE TABLETTE / MOBILE */
 @media (max-width: 1024px) {
-    .hero, .about-content { flex-direction: column; text-align: center; }
+    .hero, .about-content { flex-direction: column; }
     .cards { flex-direction: column; }
 }
 
