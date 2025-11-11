@@ -126,8 +126,7 @@ footer {
 .footer-top {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    gap: 30px;
+    justify-content: flex-end;
     align-items: flex-start;
     margin-bottom: 20px;
 }
