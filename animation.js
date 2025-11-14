@@ -1,5 +1,12 @@
 const sections = document.querySelectorAll('section');
+// ----------- MENU BURGER -----------
+const burger = document.getElementById('burger');
+const nav = document.getElementById('nav');
 
+burger.addEventListener('click', () => {
+    nav.classList.toggle('open');
+});
+// ----------- ANIMATION AU SCROLL -----------
 function revealSection() {
     const windowHeight = window.innerHeight;
     
