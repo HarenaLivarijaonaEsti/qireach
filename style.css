@@ -243,7 +243,7 @@ section.show {
         position: fixed;
         top: 0;
         right: -260px; /* caché hors écran */
-        width: 100px;
+        width: 150px;
         height: 100vh;
         background: rgba(255, 255, 255, 0);
         box-shadow: -4px 0 10px rgba(0,0,0,0.1);
